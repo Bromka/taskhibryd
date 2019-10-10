@@ -1,0 +1,36 @@
+.container {
+    background-color: #fcfcfc;
+    padding: 50px 30px;
+}
+
+.postwrap{
+    margin: 15px 0px;
+}
+.discription{
+    font-size: 13px;
+    color: #666666;
+}
+.posttitle_full{
+    font-size: 24px;
+}
+.posttext_full{
+    font-size: 20px;
+}
+.posttitle_full, .posttext_full{
+    margin-left: 40px;
+}
+.instruments{
+    margin-right: 15px;
+    color: grey;
+}
+.commentary_post{
+    font-style: italic;
+    margin: 10px auto;
+}
+.commentary_post span{
+    font-size: 12px;
+}
+.commentswrap{
+    margin-top: 30px;
+    border-top: 1px solid #cccccc;
+}

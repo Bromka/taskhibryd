@@ -1,28 +1,35 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="text-center">Посты</h2>
+        </div>
+      </div>
+      <div v-for="(post, index) in postsData" :key="index">
+        <app-mypost v-bind:post="post" :key="post.postTime" v-on:refresh="updateposts"></app-mypost>
+      </div>
+      <app-addnewpost v-on:refreshpost="updateposts" class="text-center"></app-addnewpost>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
+  data: function() {
+    return {
+      postsData: JSON.parse(localStorage.getItem("posts")),
+      showfullpost: false
+    };
+  },
+  methods: {
+    updateposts() {
+      console.log("anywhere");
+      this.postsData = JSON.parse(localStorage.getItem("posts"));
+    }
   }
-}
+};
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
